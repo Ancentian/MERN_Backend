@@ -6,15 +6,15 @@ async function authToken(req, res, next) {
         
         if (!token) {
             return res.json({
-                message: "User not Logged In",
+                message: "Please Login...",
                 error: true,
                 success: false
             })
         }
 
         jwt.verify(token, process.env.JWT_SECRET_KEY, (err, decoded) => {
-            console.log(err)
-            console.log("decoded", decoded)
+            // console.log(err)
+            // console.log("decoded", decoded)
 
             if (err) {
                 console.log(err)
